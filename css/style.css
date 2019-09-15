@@ -94,7 +94,6 @@ figure figcaption {
 
 #colorlib-aside {
     padding-top: 3em;
-    padding-bottom: 40px;
     float: left;
     width: 300px;
     position: fixed;
@@ -108,7 +107,7 @@ figure figcaption {
 
 @media screen and (max-width: 768px) {
     #colorlib-aside {
-        width: 100%;
+        width: 300px;
         -moz-transform: translateX(-300px);
         -webkit-transform: translateX(-300px);
         -ms-transform: translateX(-300px);
@@ -488,7 +487,7 @@ body.offcanvas #colorlib-aside {
     -ms-transform: translateX(0);
     -o-transform: translateX(0);
     transform: translateX(0);
-    width: 300px;
+    width: 100%;
     background: #f2f3f7;
     z-index: 999;
     position: fixed;
