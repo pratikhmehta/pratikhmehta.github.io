@@ -108,7 +108,7 @@ figure figcaption {
 
 @media screen and (max-width: 768px) {
     #colorlib-aside {
-        width: 300px;
+        width: 100%;
         -moz-transform: translateX(-300px);
         -webkit-transform: translateX(-300px);
         -ms-transform: translateX(-300px);
