@@ -106,6 +106,9 @@ figure figcaption {
 }
 
 @media screen and (max-width: 768px) {
+    .navbar{
+        margin-bottom: 0;
+    }
     #colorlib-aside {
         width: 300px;
         -moz-transform: translateX(-300px);
