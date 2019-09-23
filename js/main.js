@@ -439,7 +439,9 @@
             }
         });
 
-        $(window).scroll(function () {
+        $(window).scroll(function (e) {
+            e.stopPropagation();
+            e.preventDefault();
             if ($('body').hasClass('offcanvas')) {
 
                 $('body').removeClass('offcanvas');
