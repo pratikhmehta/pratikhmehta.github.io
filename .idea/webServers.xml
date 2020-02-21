@@ -10,6 +10,14 @@
           <option name="port" value="21" />
         </fileTransfer>
       </webServer>
+      <webServer id="7d815c2f-48d3-418b-b1ed-870e44fe8c58" name="monte.krystal.co.uk" url="http://ftp.shop-24.cc">
+        <fileTransfer host="ftp.shop-24.cc" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>
