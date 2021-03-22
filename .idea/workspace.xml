@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50057833-7c3d-4f9a-bcc8-930364779e6f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/cv/pratikmehta.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/images/cv/pratikmehta.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="50057833-7c3d-4f9a-bcc8-930364779e6f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="225" selection-start-line="225" selection-end-line="225" />
+            <state relative-caret-position="466">
+              <caret line="229" column="49" lean-forward="true" selection-start-line="229" selection-start-column="49" selection-end-line="229" selection-end-column="49" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#aside#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#section#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -57,7 +52,7 @@
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1307">
-              <caret line="461" column="10" selection-start-line="461" selection-start-column="10" selection-end-line="461" selection-end-column="10" />
+              <caret line="507" column="10" selection-start-line="507" selection-start-column="10" selection-end-line="507" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -162,7 +157,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Nesterra" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -209,7 +204,7 @@
       <workItem from="1584766178377" duration="702000" />
       <workItem from="1616386419421" duration="757000" />
       <workItem from="1616388543232" duration="120000" />
-      <workItem from="1616394452907" duration="404000" />
+      <workItem from="1616394452907" duration="634000" />
     </task>
     <task id="LOCAL-00001" summary="Update profile with new changes.">
       <created>1568546250378</created>
@@ -267,11 +262,18 @@
       <option name="project" value="LOCAL" />
       <updated>1582307001794</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Content changes.&#10;Resume update based on Job changed.">
+      <created>1616394901084</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1616394901084</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51621000" />
+    <option name="totallyTimeSpent" value="51851000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -284,6 +286,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="32" width="1853" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19087368" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -361,7 +364,8 @@
     <MESSAGE value="New details updated." />
     <MESSAGE value="Cv update 2019" />
     <MESSAGE value="Content changes.&#10;Coming soon blog add." />
-    <option name="LAST_COMMIT_MESSAGE" value="Content changes.&#10;Coming soon blog add." />
+    <MESSAGE value="Content changes.&#10;Resume update based on Job changed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Content changes.&#10;Resume update based on Job changed." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/js/bootstrap.min.js">
@@ -478,14 +482,14 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1307">
-          <caret line="461" column="10" selection-start-line="461" selection-start-column="10" selection-end-line="461" selection-end-column="10" />
+          <caret line="507" column="10" selection-start-line="507" selection-start-column="10" selection-end-line="507" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="225" selection-start-line="225" selection-end-line="225" />
+        <state relative-caret-position="466">
+          <caret line="229" column="49" lean-forward="true" selection-start-line="229" selection-start-column="49" selection-end-line="229" selection-end-column="49" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#aside#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#section#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
