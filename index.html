@@ -382,10 +382,11 @@
 	</div>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js">
-		$('.overlay').click(function (event) {
+		$('.overlay').click(function (e) {
 			overlay.hide();
-			$('.hamburger').removeClass('is-open');
-			$('.hamburger').addClass('is-closed');
+			var hamburger = $('.hamburger');
+			hamburger.removeClass('is-open');
+			hamburger.addClass('is-closed');
 			$('#wrapper').toggleClass('toggled');
 			isClosed = false;
 		});
