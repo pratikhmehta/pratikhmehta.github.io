@@ -1,0 +1,50 @@
+# dependencies
+/node_modules
+
+# production
+/build
+
+# misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# testing
+/coverage
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Binaries for macOS
+*.dmg
+
+# Windows thumbnail cache files
+Thumbs.db
+
+# Mac folder attributes
+.AppleDouble
+
+# Parcel cache
+.cache/
+
+# Optional REACT_NATIVE
+.expo/
