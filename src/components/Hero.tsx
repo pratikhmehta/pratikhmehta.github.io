@@ -123,7 +123,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                 `}
               >
                 <img 
-                  src="/WhatsApp Image 2025-05-29 at 11.50.48 AM.jpeg"
+                  src="../assets/img/profile.jpeg"
                   alt="Pratik Mehta"
                   className="w-full h-full object-cover"
                 />
