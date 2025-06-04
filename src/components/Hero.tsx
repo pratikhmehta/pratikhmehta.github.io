@@ -13,9 +13,8 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
   return (
     <section
       id="hero"
-      className={`min-h-screen flex items-center justify-center ${
-        darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
-      }`}
+      className={`min-h-screen flex items-center justify-center ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
+        }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="flex flex-col md:flex-row items-center">
@@ -34,9 +33,8 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
             </motion.h1>
 
             <motion.h2
-              className={`text-2xl sm:text-3xl font-semibold mb-6 ${
-                darkMode ? 'text-gray-300' : 'text-gray-700'
-              }`}
+              className={`text-2xl sm:text-3xl font-semibold mb-6 ${darkMode ? 'text-gray-300' : 'text-gray-700'
+                }`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -68,8 +66,8 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                   px-8 py-3 text-lg font-medium rounded-full
                   flex items-center justify-center gap-2
                   transition-all duration-300
-                  ${darkMode 
-                    ? 'bg-purple-600 hover:bg-purple-700 text-white' 
+                  ${darkMode
+                    ? 'bg-purple-600 hover:bg-purple-700 text-white'
                     : 'bg-blue-600 hover:bg-blue-700 text-white'
                   }
                 `}
@@ -77,14 +75,17 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                 <Mail size={18} />
                 Contact Me
               </Link>
-              <a 
-                href={`mailto:${contactInfo.email}`}
+              <a
+                href="/pratikmehta.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`
                   px-8 py-3 text-lg font-medium rounded-full
                   flex items-center justify-center gap-2
                   transition-all duration-300
-                  ${darkMode 
-                    ? 'border-2 border-purple-600 text-purple-400 hover:bg-purple-900/30' 
+                  ${darkMode
+                    ? 'border-2 border-purple-600 text-purple-400 hover:bg-purple-900/30'
                     : 'border-2 border-blue-600 text-blue-600 hover:bg-blue-50'
                   }
                 `}
@@ -103,16 +104,14 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
             <div className="relative">
               {/* Abstract decorative background */}
               <div
-                className={`absolute -top-16 -right-16 w-72 h-72 rounded-full ${
-                  darkMode ? 'bg-purple-900/30' : 'bg-blue-100'
-                }`}
+                className={`absolute -top-16 -right-16 w-72 h-72 rounded-full ${darkMode ? 'bg-purple-900/30' : 'bg-blue-100'
+                  }`}
               ></div>
               <div
-                className={`absolute -bottom-12 -left-12 w-60 h-60 rounded-full ${
-                  darkMode ? 'bg-indigo-900/30' : 'bg-blue-50'
-                }`}
+                className={`absolute -bottom-12 -left-12 w-60 h-60 rounded-full ${darkMode ? 'bg-indigo-900/30' : 'bg-blue-50'
+                  }`}
               ></div>
-              
+
               {/* Profile image */}
               <div
                 className={`
@@ -123,7 +122,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                   shadow-xl
                 `}
               >
-                <img 
+                <img
                   src={profileImg}
                   alt="Pratik Mehta"
                   className="w-full h-full object-cover"
@@ -133,7 +132,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
           </motion.div>
         </div>
 
-        <motion.div 
+        <motion.div
           className="absolute bottom-10 left-0 right-0 flex justify-center"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
