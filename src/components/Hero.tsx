@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { contactInfo } from '../data/resume';
 import { ArrowDown, Mail } from 'lucide-react';
+import profileImg from '../assets/img/profile.jpeg';
 
 interface HeroProps {
   darkMode: boolean;
@@ -123,7 +124,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
                 `}
               >
                 <img 
-                  src="../assets/img/profile.jpeg"
+                  src={profileImg}
                   alt="Pratik Mehta"
                   className="w-full h-full object-cover"
                 />
