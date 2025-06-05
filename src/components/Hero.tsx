@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { contactInfo } from '../data/resume';
 import { ArrowDown, Mail } from 'lucide-react';
 import profileImg from '../assets/img/profile.jpeg';
 
