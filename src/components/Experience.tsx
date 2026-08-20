@@ -10,8 +10,8 @@ const Experience: React.FC = () => {
       className="py-28 md:py-40 bg-paper-50 dark:bg-ink-950 text-slate-900 dark:text-white border-t border-slate-200/70 dark:border-ink-800"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <Reveal className="max-w-4xl mx-auto">
-          <RevealItem className="text-center mb-16">
+        <Reveal className="max-w-3xl mx-auto">
+          <RevealItem className="text-center mb-20">
             <p className="text-sm font-semibold tracking-widest uppercase text-accent-500 dark:text-accent-400 mb-3">
               Career
             </p>
@@ -21,46 +21,38 @@ const Experience: React.FC = () => {
           <div className="relative">
             <div
               aria-hidden="true"
-              className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-blue-200 dark:bg-accent-500/30"
-            ></div>
+              className="absolute left-5 md:left-6 top-2 bottom-2 w-px bg-slate-200 dark:bg-ink-700"
+            />
 
-            {experiences.map((exp, index) => (
-              <RevealItem
-                key={index}
-                className={`relative mb-12 ${
-                  index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 ml-12 md:ml-auto'
-                } md:w-1/2`}
-              >
-                <div
-                  className={`
-                    absolute w-8 h-8 rounded-full flex items-center justify-center text-white
-                    ${index % 2 === 0 ? 'left-0 md:right-0 md:left-auto md:-mr-4' : 'left-0 -ml-4'}
-                    bg-accent-500
-                  `}
-                >
-                  <Briefcase size={16} />
-                </div>
+            <div className="space-y-16">
+              {experiences.map((exp, index) => (
+                <RevealItem key={index} className="relative pl-14 md:pl-16">
+                  <div
+                    className={`absolute left-0 top-0 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center ${
+                      exp.highlight
+                        ? 'bg-accent-500 text-white'
+                        : 'bg-white dark:bg-ink-900 border border-slate-200 dark:border-ink-700 text-accent-500 dark:text-accent-400'
+                    }`}
+                  >
+                    <Briefcase size={18} />
+                  </div>
 
-                <div
-                  className={`
-                    p-6 rounded-xl border
-                    ${exp.highlight ? 'border-accent-500/40' : 'border-slate-200 dark:border-ink-700'}
-                    ${index % 2 === 0 ? 'md:mr-8' : 'md:ml-8'}
-                  `}
-                >
-                  <h3 className="text-xl font-semibold mb-2">{exp.position}</h3>
-                  <div className="font-medium mb-1 text-accent-500 dark:text-accent-400">{exp.company}</div>
-                  <div className="text-sm mb-4 text-slate-500 dark:text-slate-400">
-                    {exp.period}
-                    {exp.location ? ` · ${exp.location}` : ''}
+                  <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 mb-3">
+                    <h3 className="text-xl font-semibold">{exp.position}</h3>
+                    <span className="text-sm text-slate-500 dark:text-slate-400 md:text-right whitespace-nowrap">
+                      {exp.period}
+                    </span>
+                  </div>
+
+                  <div className="flex flex-wrap items-baseline gap-x-2 mb-5 text-sm">
+                    <span className="font-medium text-accent-500 dark:text-accent-400">{exp.company}</span>
+                    {exp.location && (
+                      <span className="text-slate-500 dark:text-slate-400">· {exp.location}</span>
+                    )}
                   </div>
 
                   {exp.metrics && exp.metrics.length > 0 && (
-                    <div
-                      className={`flex flex-wrap gap-2 mb-4 ${
-                        index % 2 === 0 ? 'md:justify-end' : ''
-                      }`}
-                    >
+                    <div className="flex flex-wrap gap-2 mb-5">
                       {exp.metrics.map((metric) => (
                         <span
                           key={metric}
@@ -72,17 +64,17 @@ const Experience: React.FC = () => {
                     </div>
                   )}
 
-                  <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                  <ul className="space-y-3 text-slate-700 dark:text-slate-300 leading-relaxed">
                     {exp.description.map((item, idx) => (
                       <li key={idx} className="flex items-start">
-                        <span className="mr-2 min-w-4">•</span>
-                        <span className="text-left">{item}</span>
+                        <span className="mr-3 mt-2 w-1 h-1 rounded-full bg-slate-400 dark:bg-slate-500 flex-shrink-0" />
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
-              </RevealItem>
-            ))}
+                </RevealItem>
+              ))}
+            </div>
           </div>
         </Reveal>
       </div>

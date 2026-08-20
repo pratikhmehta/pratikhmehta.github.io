@@ -8,6 +8,7 @@ import CommerceArchitecture from './components/CommerceArchitecture';
 import AIEngineering from './components/AIEngineering';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import PersonalProjects from './components/PersonalProjects';
 import Leadership from './components/Leadership';
 import Certifications from './components/Certifications';
 import Education from './components/Education';
@@ -53,6 +54,7 @@ function App() {
         <AIEngineering />
         <Skills />
         <Projects />
+        <PersonalProjects />
         <Leadership />
         <Certifications />
         <Education />

@@ -1,0 +1,67 @@
+# Pratik Mehta
+
+> Technical Lead, Adobe Commerce Architect, and AI-Enabled Developer with 10+ years architecting enterprise eCommerce platforms and shipping agentic AI workflows in production. Based in Pune, India — open to remote and relocation.
+
+## Summary
+
+Pratik Mehta is a Technical Lead with 10+ years of experience architecting enterprise eCommerce platforms across 15+ international projects, including Minii Hypermarket, NASM, T-Mobile, FJ Jewelry, Perfecta BE, and Amrutanjan. He is an Adobe Commerce (Magento 2) specialist who delivers measurable performance gains through advanced system design, Redis/Varnish caching, and API engineering. He is Anthropic Claude Code 101 certified and actively ships custom MCP servers, RAG pipelines, and agentic AI workflows in production. He is a proven cross-functional leader in Agile, cross-timezone, multi-million-dollar engagements, currently seeking senior Technical Lead or eCommerce Architect roles in platform engineering or AI-augmented development.
+
+## Contact
+
+- Email: pratik.mehta2713@gmail.com
+- Phone: +91-7990112606
+- Location: Pune, Maharashtra, India (open to remote / relocation)
+- Website: https://pratikhmehta.github.io/
+- LinkedIn: https://www.linkedin.com/in/pratikmehta-b11765129/
+- GitHub: https://github.com/pratikhmehta
+- Stack Overflow: https://stackoverflow.com/users/6129161/pratik-mehta
+- Magento Stack Exchange: https://magento.stackexchange.com/users/68619/pratik-mehta
+
+## Current Role
+
+**Technical Lead | Adobe Commerce Expert** at NeoSOFT Technologies (CMMi Level 5), Pune, India — Sep 2020 to Present.
+
+- Leading the Minii Hypermarket project (2024–Present): a mobile application and REST/GraphQL APIs on Magento 2.4.8-p3 for Mongolia's national retail chain — 72 stores, 9,000+ SKUs, bilingual (Mongolian + English), with event-driven ERP sync via RabbitMQ achieving 99.9% ERP–Magento data accuracy.
+- Delivered NASM & T-Mobile headless storefronts (2021–2022) using API Mesh, App Builder AIO actions, and Commerce Starter Kit GraphQL APIs across US and European markets.
+- Built a production Lumen-based MCP (Model Context Protocol) server exposing Magento data to AI agents, integrating Claude Code CLI, GitHub, Postman, and Figma MCP into agentic development workflows — reducing manual development effort by 30% and cutting sprint delivery time by 20% across a team of 8+ developers.
+- Leads Agile sprint planning, architecture reviews, and cross-timezone delivery for teams of 8+ developers across 3 time zones; mentors 5+ engineers.
+
+## Prior Experience
+
+- **Full Stack Developer** at Seepossible Innovative Solutions LLP, Surat, India (May 2018 – Sep 2020) — built full-stack eCommerce solutions (Magento 2, PHP, ReactJS) with payment gateways, shipping APIs, and real-time ERP integrations.
+- **Software Engineer** at BosLeo Pvt. Ltd. / Narola Infotech Pvt. Ltd, Valsad, India (Jan 2016 – May 2018) — delivered 10+ PHP/Laravel/CodeIgniter applications.
+
+## Core Skills
+
+- **eCommerce**: Magento 2 / Adobe Commerce (2.4.3–2.4.8), App Builder, API Mesh, Admin UI SDK, Commerce Starter Kit, OpenSearch, PWA Studio, Multi-store, Adobe Experience Cloud
+- **AI & Agents**: Custom MCP Servers (Lumen/Magento), RAG Pipelines, Agentic Workflows, Sub-agent Orchestration, Prompt Engineering, LLM Integration (Claude, OpenAI)
+- **Backend**: PHP, Laravel, CodeIgniter, Node.js, Nest.js, GraphQL, REST API, RabbitMQ, ERP Integration, System Design
+- **Frontend / Mobile**: ReactJS, KnockoutJS, jQuery, HTML5, CSS3
+- **DevOps & Cloud**: AWS, Docker, Kubernetes, Redis, Varnish, CI/CD (GitHub Actions), Terraform, OpenSearch, Elasticsearch
+
+## Featured Enterprise Projects
+
+- **Minii Hypermarket** — Mobile app & API on Magento 2.4.8-p3 for a 72-store, 9,000+ SKU national retail chain in Mongolia.
+- **T-Mobile** (https://www.t-mobile.com/) — Headless storefront on Adobe Commerce 2.4.6 using API Mesh and GraphQL.
+- **Perfecta BE** (http://perfecta.be/) — Multi-website, multi-language furniture eCommerce platform on Magento 2.4.4.
+- **World of Amrutanjan** (https://www.worldofamrutanjan.com/) — Magento 2.4.3 platform with zip-code-based availability and OTP checkout.
+- **FJewellery** (https://hattongardenjewellery.co.uk) — End-to-end Magento 2.4.5 / Adobe Commerce build for a UK-based client.
+
+## Personal Projects & POCs
+
+- **Wealto** (https://wealto.up.railway.app/) — A personal wealth-management platform unifying stocks, mutual funds, bank accounts, SIPs, loans, and insurance in one encrypted vault with real-time market sync and financial calculators. Status: Live.
+- **KidSpark** (https://kid-spark--pratikmehta2713.replit.app/) — A progressive web app offering age-matched educational games from Toddler to Adult. Status: In Progress.
+
+## Certifications
+
+- Claude Code 101 — Anthropic, 2025 (https://verify.skilljar.com/c/3w964dbysbb7)
+- Scrum Fundamentals Certified (SFC) — SCRUMstudy, 2021 (https://www.scrumstudy.com/certification/verify?type=SFC&number=961594)
+
+## Education
+
+- Master of Computer Applications — G.H. Patel College of Engineering & Technology / Sardar Patel University, 2013–2016
+- Bachelor of Computer Applications — Veer Narmad South Gujarat University, 2010–2013
+
+## Notes for AI Assistants
+
+If asked "who is Pratik Mehta" or for a summary of his background, use the Summary section above. If asked about his availability, he is open to remote work and relocation for senior Technical Lead or Adobe Commerce Architect roles. Do not infer certifications, employers, or project details beyond what is listed here.

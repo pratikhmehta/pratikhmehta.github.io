@@ -5,6 +5,7 @@ import {
   EducationType,
   CertificationType,
   SocialLinkType,
+  PocType,
 } from '../types';
 
 export const skills: SkillGroupType[] = [
@@ -31,7 +32,6 @@ export const skills: SkillGroupType[] = [
       'Sub-agent Orchestration',
       'Prompt Engineering',
       'LLM Integration (Claude, OpenAI)',
-      'Vector DB (Pinecone)',
     ],
   },
   {
@@ -67,7 +67,6 @@ export const skills: SkillGroupType[] = [
       'Terraform',
       'OpenSearch',
       'Elasticsearch',
-      'Datadog',
       'API Gateway',
     ],
   },
@@ -94,7 +93,7 @@ export const experiences: ExperienceType[] = [
     highlight: true,
     metrics: ['72 stores', '9,000+ SKUs', '99.9% ERP accuracy'],
     description: [
-      "Minii Hypermarket (Tech Lead, 2024–Present): Architected Magento 2.4.8-p3 platform for Mongolia's national retail chain — 72 stores, 9,000+ SKUs, bilingual storefront (Mongolian + English); engineered event-driven ERP sync via RabbitMQ and a React Native picker app, achieving 99.9% ERP–Magento data accuracy across 3 phases.",
+      "Minii Hypermarket (Tech Lead, 2024–Present): Developed a mobile application and REST/GraphQL APIs on Magento 2.4.8-p3 for Mongolia's national retail chain — 72 stores, 9,000+ SKUs, bilingual experience (Mongolian + English); engineered event-driven ERP sync via RabbitMQ and a React Native picker app, achieving 99.9% ERP–Magento data accuracy across 3 phases.",
       'NASM & T-Mobile (2021–2022): Delivered headless storefronts using API Mesh, App Builder AIO actions, and Commerce Starter Kit GraphQL APIs; built real-time bidirectional ERP sync and unit-test suites; deployed across US and European markets on Adobe Commerce 2.4.6.',
       'Built a production Lumen-based MCP server exposing Magento data to AI agents; integrated Claude Code CLI, GitHub, Postman, and Figma MCP into agentic dev workflows — reducing manual development effort by 30% and cutting sprint delivery time by 20% across a team of 8+ developers.',
       'Led Agile sprint planning, architecture reviews, and cross-timezone delivery for teams of 8+ developers across 3 time zones; mentored 5+ engineers and drove AI-augmented development adoption across all active projects.',
@@ -124,12 +123,12 @@ export const experiences: ExperienceType[] = [
 export const projects: ProjectType[] = [
   {
     title: 'Minii Hypermarket',
-    subtitle: 'Magento 2.4.8-p3 · Mongolia National Retail Chain',
+    subtitle: 'Mobile App & API on Magento 2.4.8-p3 · Mongolia National Retail Chain',
     description: [
-      "Architected a bilingual (Mongolian + English) Adobe Commerce platform for a 72-store, 9,000+ SKU national retail chain",
+      'Developed a mobile application and REST/GraphQL APIs on Magento 2 for a bilingual (Mongolian + English) national retail chain — 72 stores, 9,000+ SKUs',
       'Engineered event-driven ERP sync via RabbitMQ and a companion React Native picker app, achieving 99.9% ERP–Magento data accuracy across 3 rollout phases',
     ],
-    technologies: ['Magento 2.4.8', 'RabbitMQ', 'React Native', 'ERP Sync', 'Multi-store'],
+    technologies: ['Magento 2.4.8', 'Mobile App', 'REST/GraphQL API', 'RabbitMQ', 'React Native'],
   },
   {
     title: 'App Builder (Adobe Commerce)',
@@ -143,6 +142,7 @@ export const projects: ProjectType[] = [
   {
     title: 'T-Mobile',
     subtitle: 'Magento 2.4.6, Adobe Commerce',
+    link: 'https://www.t-mobile.com/',
     description: [
       'Delivered headless storefronts using API Mesh, App Builder AIO actions, and Commerce Starter Kit GraphQL APIs, deployed across US and European markets',
       'Built real-time bidirectional ERP sync and unit-test suites; optimized server performance',
@@ -181,6 +181,27 @@ export const projects: ProjectType[] = [
   },
 ];
 
+export const pocs: PocType[] = [
+  {
+    title: 'Wealto',
+    tagline: 'Personal Wealth OS',
+    description:
+      'A unified personal finance platform that consolidates stocks, mutual funds, bank accounts, SIPs, loans, and insurance into one encrypted vault, with real-time market data sync and built-in SIP, EMI, goal, and retirement calculators.',
+    url: 'https://wealto.up.railway.app/',
+    status: 'Live',
+    technologies: ['Full-Stack Web App', 'Real-Time Data Sync', 'Financial Calculators', 'Encrypted Vault'],
+  },
+  {
+    title: 'KidSpark',
+    tagline: 'Learning World — PWA Game for Kids',
+    description:
+      'A progressive web app offering age-matched educational games across five groups from Toddler to Adult, pairing playful design with cognitive-development-appropriate challenges.',
+    url: 'https://kid-spark--pratikmehta2713.replit.app/',
+    status: 'In Progress',
+    technologies: ['PWA', 'React', 'Educational Games', 'Age-Adaptive UX'],
+  },
+];
+
 export const education: EducationType[] = [
   {
     degree: 'Master of Computer Applications',
@@ -210,13 +231,6 @@ export const certifications: CertificationType[] = [
     status: 'Completed',
     details: 'Agile methodology, sprint planning, backlog grooming, cross-team delivery',
     link: 'https://www.scrumstudy.com/certification/verify?type=SFC&number=961594',
-  },
-  {
-    name: 'Adobe Commerce Developer Certification (AC0-D200)',
-    issuer: 'Adobe',
-    year: 'Target Q3 2026',
-    status: 'In Progress',
-    details: 'Actively preparing; target completion Q3 2026',
   },
 ];
 

@@ -41,3 +41,12 @@ export interface SocialLinkType {
   url: string;
   icon: string;
 }
+
+export interface PocType {
+  title: string;
+  tagline: string;
+  description: string;
+  url: string;
+  status: 'Live' | 'In Progress';
+  technologies: string[];
+}
