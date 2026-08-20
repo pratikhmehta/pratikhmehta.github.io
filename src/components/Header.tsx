@@ -4,11 +4,10 @@ import { Menu, X, Moon, Sun } from 'lucide-react';
 import { Link } from 'react-scroll';
 
 interface HeaderProps {
-  darkMode: boolean;
   toggleDarkMode: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
+const Header: React.FC<HeaderProps> = ({ toggleDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -16,12 +15,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -34,63 +28,61 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
     { name: 'Home', to: 'hero' },
     { name: 'About', to: 'about' },
     { name: 'Experience', to: 'experience' },
-    { name: 'Skills', to: 'skills' },
+    { name: 'Expertise', to: 'skills' },
     { name: 'Projects', to: 'projects' },
+    { name: 'Certifications', to: 'certifications' },
     { name: 'Contact', to: 'contact' },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? darkMode
-            ? 'bg-gray-900 shadow-lg'
-            : 'bg-white shadow-lg'
-          : darkMode
-          ? 'bg-transparent'
-          : 'bg-transparent'
+        scrolled ? 'bg-paper-50 dark:bg-ink-950 shadow-lg' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <motion.div 
+          <motion.div
             className="flex items-center"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Link 
-              to="hero" 
-              smooth={true} 
-              duration={500} 
-              className={`text-xl md:text-2xl font-bold cursor-pointer ${darkMode ? 'text-white' : 'text-gray-900'}`}
+            <Link
+              to="hero"
+              href="#hero"
+              smooth={true}
+              duration={500}
+              className="text-lg md:text-xl font-semibold cursor-pointer text-slate-900 dark:text-white rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500"
             >
               Pratik Mehta
             </Link>
           </motion.div>
 
           {/* Desktop Nav */}
-          <motion.nav 
-            className="hidden md:flex space-x-6"
+          <motion.nav
+            className="hidden lg:flex space-x-5 xl:space-x-6"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            {menuItems.map((item, index) => (
+            {menuItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.to}
+                href={`#${item.to}`}
                 spy={true}
                 smooth={true}
                 offset={-70}
                 duration={500}
-                className={`
-                  text-base font-medium cursor-pointer transition-colors duration-300
-                  ${darkMode ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'}
+                className="
+                  text-sm font-medium cursor-pointer transition-colors duration-300
+                  text-slate-700 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white
                   relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0
                   after:transition-all after:duration-300 hover:after:w-full
-                  ${darkMode ? 'after:bg-purple-500' : 'after:bg-blue-600'}
-                `}
+                  after:bg-accent-500 dark:after:bg-accent-400
+                  rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500
+                "
               >
                 {item.name}
               </Link>
@@ -99,7 +91,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
 
           <div className="flex items-center">
             <motion.button
-              className={`p-2 rounded-full ${darkMode ? 'text-yellow-400 hover:bg-gray-800' : 'text-gray-600 hover:bg-gray-200'}`}
+              className="p-2 rounded-full text-slate-600 hover:bg-slate-200 dark:text-yellow-400 dark:hover:bg-ink-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500"
               onClick={toggleDarkMode}
               aria-label="Toggle dark mode"
               initial={{ opacity: 0, rotate: -90 }}
@@ -107,15 +99,18 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
               transition={{ duration: 0.5 }}
               whileTap={{ scale: 0.9 }}
             >
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+              <Sun size={20} className="hidden dark:block" />
+              <Moon size={20} className="block dark:hidden" />
             </motion.button>
 
             <motion.button
-              className={`md:hidden ml-3 p-2 rounded-md ${
-                darkMode ? 'text-white hover:bg-gray-800' : 'text-gray-700 hover:bg-gray-200'
+              className={`lg:hidden ml-3 p-2 rounded-md text-slate-700 hover:bg-slate-200 dark:text-white dark:hover:bg-ink-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 ${
+                isMenuOpen ? 'invisible' : ''
               }`}
               onClick={toggleMenu}
-              aria-label="Toggle menu"
+              aria-label="Open menu"
+              aria-hidden={isMenuOpen}
+              tabIndex={isMenuOpen ? -1 : 0}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -130,7 +125,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className={`fixed inset-0 z-40 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}
+            className="fixed inset-0 z-40 bg-paper-50 dark:bg-ink-950"
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
@@ -138,16 +133,14 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
           >
             <div className="flex justify-end p-4">
               <button
-                className={`p-2 rounded-md ${
-                  darkMode ? 'text-white hover:bg-gray-800' : 'text-gray-700 hover:bg-gray-200'
-                }`}
+                className="p-2 rounded-md text-slate-700 hover:bg-slate-200 dark:text-white dark:hover:bg-ink-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500"
                 onClick={toggleMenu}
                 aria-label="Close menu"
               >
                 <X size={24} />
               </button>
             </div>
-            <div className="flex flex-col items-center justify-center h-full space-y-8">
+            <div className="flex flex-col items-center justify-center gap-6 h-[calc(100%-72px)] overflow-y-auto py-8">
               {menuItems.map((item, index) => (
                 <motion.div
                   key={item.name}
@@ -157,13 +150,15 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
                 >
                   <Link
                     to={item.to}
+                    href={`#${item.to}`}
                     spy={true}
                     smooth={true}
                     offset={-70}
                     duration={500}
-                    className={`text-xl font-medium cursor-pointer ${
-                      darkMode ? 'text-white' : 'text-gray-900'
-                    }`}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') toggleMenu();
+                    }}
+                    className="text-xl font-medium cursor-pointer text-slate-900 dark:text-white rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500"
                     onClick={toggleMenu}
                   >
                     {item.name}

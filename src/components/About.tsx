@@ -1,136 +1,77 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import { summary, contactInfo } from '../data/resume';
+import { Reveal, RevealItem } from './shared/Reveal';
 
-interface AboutProps {
-  darkMode: boolean;
-}
-
-const About: React.FC<AboutProps> = ({ darkMode }) => {
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
+const About: React.FC = () => {
   return (
     <section
       id="about"
-      ref={ref}
-      className={`py-20 ${darkMode ? 'bg-gray-800 text-white' : 'bg-gray-50 text-gray-900'}`}
+      className="py-28 md:py-40 bg-paper-100 dark:bg-ink-900 text-slate-900 dark:text-white border-t border-slate-200/70 dark:border-ink-800"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          className="max-w-4xl mx-auto"
-        >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${darkMode ? 'text-purple-400' : 'text-blue-600'}`}>
-              About Me
-            </h2>
-            <div className={`h-1 w-20 mx-auto rounded-full ${darkMode ? 'bg-purple-500' : 'bg-blue-600'}`}></div>
-          </motion.div>
+        <Reveal className="max-w-4xl mx-auto">
+          <RevealItem className="text-center mb-16">
+            <p className="text-sm font-semibold tracking-widest uppercase text-accent-500 dark:text-accent-400 mb-3">
+              About
+            </p>
+            <h2 className="text-3xl md:text-4xl font-semibold">Professional Introduction</h2>
+          </RevealItem>
 
-          <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-10">
+          <RevealItem className="flex flex-col md:flex-row gap-10">
             <div className="md:w-1/2 space-y-6">
               {summary.map((paragraph, index) => (
-                <motion.p
-                  key={index}
-                  variants={itemVariants}
-                  className={`leading-relaxed ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}
-                >
+                <p key={index} className="leading-relaxed text-slate-700 dark:text-slate-300">
                   {paragraph}
-                </motion.p>
+                </p>
               ))}
             </div>
 
             <div className="md:w-1/2">
-              <motion.div
-                variants={itemVariants}
-                className={`p-6 rounded-lg shadow-lg ${
-                  darkMode ? 'bg-gray-700' : 'bg-white'
-                }`}
-              >
-                <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-purple-400' : 'text-blue-600'}`}>
-                  Personal Information
-                </h3>
+              <div className="p-6 rounded-xl border border-slate-200 dark:border-ink-700">
+                <h3 className="text-xl font-semibold mb-4">Personal Information</h3>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <span className={`font-semibold mr-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Email:
-                    </span>
+                    <span className="font-semibold mr-2 text-slate-700 dark:text-slate-300">Email:</span>
                     <a
                       href={`mailto:${contactInfo.email}`}
-                      className={`hover:underline ${darkMode ? 'text-purple-400' : 'text-blue-600'}`}
+                      className="hover:underline text-accent-500 dark:text-accent-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 rounded"
                     >
                       {contactInfo.email}
                     </a>
                   </div>
                   <div className="flex items-start">
-                    <span className={`font-semibold mr-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Phone:
-                    </span>
+                    <span className="font-semibold mr-2 text-slate-700 dark:text-slate-300">Phone:</span>
                     <a
                       href={`tel:${contactInfo.phone}`}
-                      className={`hover:underline ${darkMode ? 'text-purple-400' : 'text-blue-600'}`}
+                      className="hover:underline text-accent-500 dark:text-accent-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 rounded"
                     >
                       {contactInfo.phone}
                     </a>
                   </div>
                   <div className="flex items-start">
-                    <span className={`font-semibold mr-2 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                      Website:
-                    </span>
+                    <span className="font-semibold mr-2 text-slate-700 dark:text-slate-300">Location:</span>
+                    <span className="text-slate-700 dark:text-slate-300">{contactInfo.location}</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="font-semibold mr-2 text-slate-700 dark:text-slate-300">Website:</span>
                     <a
                       href={`https://${contactInfo.website}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`hover:underline ${darkMode ? 'text-purple-400' : 'text-blue-600'}`}
+                      className="hover:underline text-accent-500 dark:text-accent-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 rounded"
                     >
                       {contactInfo.website}
                     </a>
                   </div>
+                  <div className="flex items-start">
+                    <span className="font-semibold mr-2 text-slate-700 dark:text-slate-300">Availability:</span>
+                    <span className="text-slate-700 dark:text-slate-300">{contactInfo.availability}</span>
+                  </div>
                 </div>
-
-                <div className="mt-8">
-                  <h3 className={`text-xl font-bold mb-4 ${darkMode ? 'text-purple-400' : 'text-blue-600'}`}>
-                    Expertise
-                  </h3>
-                  <ul className={`list-disc pl-5 ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <li>Magento 2 Custom Module Development</li>
-                    <li>E-commerce Solution Architecture</li>
-                    <li>API Development & Integration</li>
-                    <li>Team Leadership & Project Management</li>
-                    <li>Performance Optimization</li>
-                  </ul>
-                </div>
-              </motion.div>
+              </div>
             </div>
-          </motion.div>
-        </motion.div>
+          </RevealItem>
+        </Reveal>
       </div>
     </section>
   );

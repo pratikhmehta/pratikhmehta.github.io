@@ -1,62 +1,136 @@
-import { SkillType, ExperienceType, ProjectType, EducationType, SocialLinkType } from '../types';
-import { Github, Linkedin, Code2, FileCode2, SquareCode } from 'lucide-react';
+import {
+  SkillGroupType,
+  ExperienceType,
+  ProjectType,
+  EducationType,
+  CertificationType,
+  SocialLinkType,
+} from '../types';
 
-export const skills: SkillType[] = [
-  { name: 'Magento 2 (Adobe Commerce)', percentage: 95 },
-  { name: 'API Development (REST, GraphQL)', percentage: 90 },
-  { name: 'Frontend (React, JavaScript)', percentage: 85 },
-  { name: 'Backend (PHP, Laravel, CodeIgniter)', percentage: 90 },
-  { name: 'DevOps (AWS, Docker)', percentage: 80 },
-  { name: 'Agile & Scrum', percentage: 85 },
+export const skills: SkillGroupType[] = [
+  {
+    category: 'eCommerce',
+    items: [
+      'Magento 2 / Adobe Commerce (2.4.3–2.4.8)',
+      'App Builder',
+      'API Mesh',
+      'Admin UI SDK',
+      'Commerce Starter Kit',
+      'OpenSearch',
+      'PWA Studio',
+      'Multi-store',
+      'Adobe Experience Cloud',
+    ],
+  },
+  {
+    category: 'AI & Agents',
+    items: [
+      'Custom MCP Servers (Lumen/Magento)',
+      'RAG Pipelines',
+      'Agentic Workflows',
+      'Sub-agent Orchestration',
+      'Prompt Engineering',
+      'LLM Integration (Claude, OpenAI)',
+      'Vector DB (Pinecone)',
+    ],
+  },
+  {
+    category: 'Backend',
+    items: [
+      'PHP',
+      'Laravel',
+      'CodeIgniter',
+      'Node.js',
+      'Nest.js',
+      'GraphQL',
+      'REST API',
+      'RabbitMQ',
+      'ERP Integration',
+      'AVALARA',
+      'System Design',
+    ],
+  },
+  {
+    category: 'Frontend / Mobile',
+    items: ['ReactJS', 'KnockoutJS', 'jQuery', 'HTML5', 'CSS3', 'Firebase Push Notifications'],
+  },
+  {
+    category: 'DevOps & Cloud',
+    items: [
+      'AWS',
+      'Docker',
+      'Kubernetes',
+      'Redis',
+      'Varnish',
+      'CI/CD (GitHub Actions)',
+      'Git',
+      'Terraform',
+      'OpenSearch',
+      'Elasticsearch',
+      'Datadog',
+      'API Gateway',
+    ],
+  },
+  {
+    category: 'Testing & Performance',
+    items: [
+      'Unit Testing',
+      'Load Testing',
+      'UAT',
+      'Caching Strategy',
+      'Performance Profiling',
+      'Security Hardening',
+      'API Monitoring',
+    ],
+  },
 ];
 
 export const experiences: ExperienceType[] = [
   {
-    position: 'Tech Lead | Magento Expert',
-    company: 'Nesoft Technologies',
+    position: 'Technical Lead | Adobe Commerce Expert',
+    company: 'NeoSOFT Technologies (CMMi Level 5)',
     period: 'Sep 2020 - Present',
+    location: 'Pune, India',
+    highlight: true,
+    metrics: ['72 stores', '9,000+ SKUs', '99.9% ERP accuracy'],
     description: [
-      'Led a team of developers in building custom Magento 2.4.x solutions from the ground up',
-      'Delivered complex e-commerce projects for international clients like Perfecta BE and FJEwellery',
-      'Implemented GraphQL APIs and conducted unit testing for the T-Mobile project',
-      'Customized Magento core modules for World of Amrutanjan and Precious Imaginarium',
-      'Led server setups and deployment automation using AWS, Docker, and Varnish',
-      'Actively contributed to client communications and project management',
+      "Minii Hypermarket (Tech Lead, 2024–Present): Architected Magento 2.4.8-p3 platform for Mongolia's national retail chain — 72 stores, 9,000+ SKUs, bilingual storefront (Mongolian + English); engineered event-driven ERP sync via RabbitMQ and a React Native picker app, achieving 99.9% ERP–Magento data accuracy across 3 phases.",
+      'NASM & T-Mobile (2021–2022): Delivered headless storefronts using API Mesh, App Builder AIO actions, and Commerce Starter Kit GraphQL APIs; built real-time bidirectional ERP sync and unit-test suites; deployed across US and European markets on Adobe Commerce 2.4.6.',
+      'Built a production Lumen-based MCP server exposing Magento data to AI agents; integrated Claude Code CLI, GitHub, Postman, and Figma MCP into agentic dev workflows — reducing manual development effort by 30% and cutting sprint delivery time by 20% across a team of 8+ developers.',
+      'Led Agile sprint planning, architecture reviews, and cross-timezone delivery for teams of 8+ developers across 3 time zones; mentored 5+ engineers and drove AI-augmented development adoption across all active projects.',
     ],
   },
   {
     position: 'Full Stack Developer',
     company: 'Seepossible Innovative Solutions LLP',
     period: 'May 2018 - Sep 2020',
+    location: 'Surat, India',
     description: [
-      'Developed e-commerce solutions using Magento 2 and PHP',
-      'Managed third-party API integrations for payment gateways and shipping providers',
-      'Worked on React and JavaScript for client-side customisation',
-      'Led development for RAPID IMAGINARIUM project',
+      'Built full-stack eCommerce solutions (Magento 2, PHP, ReactJS) with payment gateways, shipping APIs, and real-time ERP integrations; API and caching optimizations improved storefront speed by 30% across 6+ client projects.',
+      'Developed reusable React component libraries; owned requirements gathering, sprint tracking, and post-deployment support; reduced post-release defects by 40% through structured UAT processes.',
     ],
   },
   {
     position: 'Software Engineer',
-    company: 'Bosleo PVT LTD',
-    period: 'Mar 2017 - May 2018',
+    company: 'BosLeo Pvt. Ltd. · Narola Infotech Pvt. Ltd',
+    period: 'Jan 2016 - May 2018',
+    location: 'Valsad, India',
     description: [
-      'Worked as a PHP developer with frameworks like CodeIgniter and Laravel',
-      'Integrated AngularJS and Memcache to build efficient web applications',
-    ],
-  },
-  {
-    position: 'Software Engineer',
-    company: 'Narola Infotech PVT LTD',
-    period: 'Jan 2016 - Mar 2017',
-    description: [
-      'Developed applications using PHP frameworks like Laravel, CodeIgniter, and WordPress',
-      'Integrated various APIs (Facebook, Twitter, Google Maps, Stripe) into web applications',
-      'Gained extensive experience in Git, collaborating with global teams on high-profile client projects',
+      'Delivered 10+ PHP/Laravel/CodeIgniter applications; improved data retrieval performance by 25% via AngularJS and Memcache optimization; integrated Facebook, Google Maps, Stripe, and Twitter APIs across 8+ projects.',
     ],
   },
 ];
 
 export const projects: ProjectType[] = [
+  {
+    title: 'Minii Hypermarket',
+    subtitle: 'Magento 2.4.8-p3 · Mongolia National Retail Chain',
+    description: [
+      "Architected a bilingual (Mongolian + English) Adobe Commerce platform for a 72-store, 9,000+ SKU national retail chain",
+      'Engineered event-driven ERP sync via RabbitMQ and a companion React Native picker app, achieving 99.9% ERP–Magento data accuracy across 3 rollout phases',
+    ],
+    technologies: ['Magento 2.4.8', 'RabbitMQ', 'React Native', 'ERP Sync', 'Multi-store'],
+  },
   {
     title: 'App Builder (Adobe Commerce)',
     subtitle: 'Magento 2.4.7-P3',
@@ -70,10 +144,10 @@ export const projects: ProjectType[] = [
     title: 'T-Mobile',
     subtitle: 'Magento 2.4.6, Adobe Commerce',
     description: [
-      'Developed GraphQL APIs, optimized server performance, and implemented unit tests',
-      'Managed client communication and version control through Git',
+      'Delivered headless storefronts using API Mesh, App Builder AIO actions, and Commerce Starter Kit GraphQL APIs, deployed across US and European markets',
+      'Built real-time bidirectional ERP sync and unit-test suites; optimized server performance',
     ],
-    technologies: ['Magento 2.4.6', 'GraphQL', 'Unit Testing', 'Server Optimization'],
+    technologies: ['Magento 2.4.6', 'API Mesh', 'GraphQL', 'Unit Testing'],
   },
   {
     title: 'Perfecta BE',
@@ -109,14 +183,40 @@ export const projects: ProjectType[] = [
 
 export const education: EducationType[] = [
   {
-    degree: 'Master of Computer Application',
-    school: 'Sardar Patel University',
+    degree: 'Master of Computer Applications',
+    school: 'G.H. Patel College of Engineering & Technology / Sardar Patel University',
     period: '2013 - 2016',
   },
   {
-    degree: 'Bachelor of Computer Application',
+    degree: 'Bachelor of Computer Applications',
     school: 'Veer Narmad South Gujarat University',
     period: '2010 - 2013',
+  },
+];
+
+export const certifications: CertificationType[] = [
+  {
+    name: 'Claude Code 101',
+    issuer: 'Anthropic',
+    year: '2025',
+    status: 'Completed',
+    details: 'Agentic coding, sub-agents, MCP server development, token optimisation',
+    link: 'https://verify.skilljar.com/c/3w964dbysbb7',
+  },
+  {
+    name: 'Scrum Fundamentals Certified (SFC)',
+    issuer: 'SCRUMstudy',
+    year: '2021',
+    status: 'Completed',
+    details: 'Agile methodology, sprint planning, backlog grooming, cross-team delivery',
+    link: 'https://www.scrumstudy.com/certification/verify?type=SFC&number=961594',
+  },
+  {
+    name: 'Adobe Commerce Developer Certification (AC0-D200)',
+    issuer: 'Adobe',
+    year: 'Target Q3 2026',
+    status: 'In Progress',
+    details: 'Actively preparing; target completion Q3 2026',
   },
 ];
 
@@ -149,26 +249,27 @@ export const socialLinks: SocialLinkType[] = [
 ];
 
 export const contactInfo = {
-  phone: '+91 7990112606',
+  phone: '+91-7990112606',
   email: 'pratik.mehta2713@gmail.com',
   website: 'pratikhmehta.github.io',
+  location: 'Pune, Maharashtra, India',
+  availability: 'Open to Remote / Relocation',
 };
 
 export const summary = [
-  'I have a strong understanding of Magento\'s architecture and know how to create and manage products, categories, and customer accounts.',
-  'I also have experience with Magento theming and front-end development using HTML, CSS, and JavaScript.',
-  'Additionally, I am proficient in creating custom modules to extend Magento\'s functionality and integrating Magento with third-party payment gateways and shipping providers.',
-  'I have knowledge of Magento\'s caching and performance optimization techniques.',
-  'I led the development of a large-scale Magento e-commerce website for a retail company, resulting in increased online sales and improved customer experience.',
-  'I also built a custom Magento extension for a client in the automotive industry, improving their inventory management process.',
-  'Right now I am working on Magento 2.4.6 with Adobe Commerce.',
-  'I demonstrate strong competency in designing, developing, and maintaining REST APIs.'
+  "Technical Lead with 10+ years of experience architecting enterprise eCommerce platforms across 15+ international projects, including Minii Hypermarket, NASM, T-Mobile, FJ Jewelry, Perfecta BE, and Amrutanjan.",
+  'Adobe Commerce specialist delivering measurable performance gains through advanced system design, Redis/Varnish caching, and API engineering.',
+  'Anthropic Claude Code 101 certified — actively shipping custom MCP servers, RAG pipelines, and agentic AI workflows in production.',
+  'Proven cross-functional leader in Agile, cross-timezone, multi-million-dollar engagements, seeking senior Technical Lead or eCommerce Architect roles in platform engineering or AI-augmented development.',
 ];
 
-export const toolsAndCertifications = [
-  'Visual Studio Code',
-  'PHPStorm',
-  'AWS Server',
-  'Jira',
-  'Scrum Foundation Certification (SFC)',
+export const achievements = [
+  { value: '10+', label: 'Years of experience', context: 'Architecting enterprise eCommerce platforms' },
+  { value: '15+', label: 'International projects', context: 'Across US, European, and Asian markets' },
+  { value: '72', label: 'Stores', context: 'Mongolia national retail platform architected' },
+  { value: '9,000+', label: 'SKUs', context: 'Bilingual multi-store catalog' },
+  { value: '99.9%', label: 'ERP accuracy', context: 'Event-driven RabbitMQ sync across 3 phases' },
+  { value: '30%', label: 'Less dev effort', context: 'Via MCP-server & agentic workflows' },
+  { value: '20%', label: 'Faster delivery', context: 'Sprint cycle time reduction' },
+  { value: '8+', label: 'Engineers led', context: 'Across 3 time zones' },
 ];
