@@ -7,6 +7,8 @@ import {
 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { Reveal, RevealItem } from './shared/Reveal';
+import { MotionAnchor, MotionButton } from './shared/MotionButton';
+import { duration, easeStandard } from '../lib/motion';
 
 const Contact: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -141,18 +143,16 @@ const Contact: React.FC = () => {
               <h3 className="text-2xl font-semibold mt-12 mb-6">Follow Me</h3>
               <div className="flex flex-wrap gap-4">
                 {socialLinks.map((link, index) => (
-                  <motion.a
+                  <MotionAnchor
                     key={index}
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-full transition-transform duration-300 hover:scale-110 bg-blue-100 text-blue-600 hover:bg-blue-200 dark:bg-accent-500/10 dark:text-accent-400 dark:hover:bg-accent-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500"
+                    className="p-3 rounded-full transition-colors duration-300 bg-blue-100 text-blue-600 hover:bg-blue-200 dark:bg-accent-500/10 dark:text-accent-400 dark:hover:bg-accent-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500"
                     aria-label={link.name}
-                    whileHover={{ y: -5 }}
-                    whileTap={{ scale: 0.9 }}
                   >
                     {getIconComponent(link.icon)}
-                  </motion.a>
+                  </MotionAnchor>
                 ))}
               </div>
             </RevealItem>
@@ -162,7 +162,12 @@ const Contact: React.FC = () => {
                 <h3 className="text-2xl font-semibold mb-6">Send Me a Message</h3>
 
                 {submitted ? (
-                  <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} className="p-4 rounded-lg mb-4 text-center bg-green-100 text-green-800 dark:bg-green-800/40 dark:text-green-300">
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: duration.base, ease: easeStandard }}
+                    className="p-4 rounded-lg mb-4 text-center bg-green-100 text-green-800 dark:bg-green-800/40 dark:text-green-300"
+                  >
                     <p className="font-medium">Thank you for your message! I'll get back to you soon.</p>
                   </motion.div>
                 ) : (
@@ -172,14 +177,18 @@ const Contact: React.FC = () => {
                         {errorMessage}
                       </div>
                     )}
-                    <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" required className="w-full px-4 py-2 mb-4 rounded-lg bg-white text-slate-900 border border-slate-300 dark:bg-ink-700 dark:text-white dark:border-ink-700 focus:outline-none focus:ring-2 focus:ring-accent-500" />
-                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email Address" required className="w-full px-4 py-2 mb-4 rounded-lg bg-white text-slate-900 border border-slate-300 dark:bg-ink-700 dark:text-white dark:border-ink-700 focus:outline-none focus:ring-2 focus:ring-accent-500" />
-                    <input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="Subject" required className="w-full px-4 py-2 mb-4 rounded-lg bg-white text-slate-900 border border-slate-300 dark:bg-ink-700 dark:text-white dark:border-ink-700 focus:outline-none focus:ring-2 focus:ring-accent-500" />
-                    <textarea name="message" rows={5} value={formData.message} onChange={handleChange} placeholder="Message" required className="w-full px-4 py-2 mb-6 rounded-lg bg-white text-slate-900 border border-slate-300 dark:bg-ink-700 dark:text-white dark:border-ink-700 focus:outline-none focus:ring-2 focus:ring-accent-500"></textarea>
+                    <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" required className="w-full px-4 py-2 mb-4 rounded-lg bg-white text-slate-900 border border-slate-300 dark:bg-ink-700 dark:text-white dark:border-ink-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent-500" />
+                    <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email Address" required className="w-full px-4 py-2 mb-4 rounded-lg bg-white text-slate-900 border border-slate-300 dark:bg-ink-700 dark:text-white dark:border-ink-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent-500" />
+                    <input type="text" name="subject" value={formData.subject} onChange={handleChange} placeholder="Subject" required className="w-full px-4 py-2 mb-4 rounded-lg bg-white text-slate-900 border border-slate-300 dark:bg-ink-700 dark:text-white dark:border-ink-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent-500" />
+                    <textarea name="message" rows={5} value={formData.message} onChange={handleChange} placeholder="Message" required className="w-full px-4 py-2 mb-6 rounded-lg bg-white text-slate-900 border border-slate-300 dark:bg-ink-700 dark:text-white dark:border-ink-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-accent-500"></textarea>
 
-                    <motion.button type="submit" disabled={isSubmitting} className={`w-full px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper-100 dark:focus-visible:ring-offset-ink-900 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`} whileTap={{ scale: 0.95 }}>
+                    <MotionButton
+                      type="submit"
+                      disabled={isSubmitting}
+                      className={`w-full px-6 py-3 rounded-lg font-medium flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 transition-colors duration-300 text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 focus-visible:ring-offset-paper-100 dark:focus-visible:ring-offset-ink-900 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                    >
                       {isSubmitting ? <span>Sending...</span> : (<><Send size={18} /><span>Send Message</span></>)}
-                    </motion.button>
+                    </MotionButton>
                   </form>
                 )}
               </div>

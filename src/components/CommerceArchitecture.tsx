@@ -60,7 +60,7 @@ const CommerceArchitecture: React.FC = () => {
                       {group.items.map((item) => (
                         <li
                           key={item}
-                          className="text-slate-700 dark:text-slate-300 pl-4 border-l border-slate-200 dark:border-ink-700"
+                          className="text-slate-700 dark:text-slate-300 pl-4 border-l border-slate-200 dark:border-ink-700 transition-colors duration-300 hover:border-accent-500 dark:hover:border-accent-400"
                         >
                           {item}
                         </li>

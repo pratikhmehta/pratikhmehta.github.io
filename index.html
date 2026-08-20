@@ -25,6 +25,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Pratik Mehta | Technical Lead, Adobe Commerce Architect & AI-Enabled Developer</title>
 
+    <script>
+      (function () {
+        var saved = localStorage.getItem('darkMode');
+        var isDark = saved ? saved === 'true' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (isDark) document.documentElement.classList.add('dark');
+      })();
+    </script>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",

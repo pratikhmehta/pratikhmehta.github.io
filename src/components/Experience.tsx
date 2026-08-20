@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { experiences } from '../data/resume';
 import { Briefcase } from 'lucide-react';
 import { Reveal, RevealItem } from './shared/Reveal';
 
 const Experience: React.FC = () => {
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const prefersReducedMotion = useReducedMotion();
+
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ['start 0.8', 'end 0.6'],
+  });
+  const lineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
   return (
     <section
       id="experience"
@@ -18,10 +28,15 @@ const Experience: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-semibold">Work Experience</h2>
           </RevealItem>
 
-          <div className="relative">
+          <div ref={timelineRef} className="relative">
             <div
               aria-hidden="true"
               className="absolute left-5 md:left-6 top-2 bottom-2 w-px bg-slate-200 dark:bg-ink-700"
+            />
+            <motion.div
+              aria-hidden="true"
+              className="absolute left-5 md:left-6 top-2 bottom-2 w-px bg-accent-500 dark:bg-accent-400 origin-top"
+              style={{ scaleY: prefersReducedMotion ? 1 : lineScale }}
             />
 
             <div className="space-y-16">

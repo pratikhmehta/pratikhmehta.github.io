@@ -2,6 +2,7 @@ import React from 'react';
 import { pocs } from '../data/resume';
 import { ArrowUpRight } from 'lucide-react';
 import { Reveal, RevealItem } from './shared/Reveal';
+import MotionCard from './shared/MotionCard';
 
 const PersonalProjects: React.FC = () => {
   return (
@@ -24,49 +25,48 @@ const PersonalProjects: React.FC = () => {
 
           <div className="grid md:grid-cols-2 gap-6">
             {pocs.map((poc) => (
-              <RevealItem
-                key={poc.title}
-                className="rounded-xl border border-slate-200 dark:border-ink-700 p-6 flex flex-col"
-              >
-                <div className="flex items-start justify-between gap-3 mb-2">
-                  <h3 className="text-xl font-semibold">{poc.title}</h3>
-                  <span
-                    className={`px-2.5 py-1 text-xs font-medium rounded-full whitespace-nowrap ${
-                      poc.status === 'Live'
-                        ? 'bg-green-100 text-green-800 dark:bg-green-800/30 dark:text-green-300'
-                        : 'bg-amber-100 text-amber-800 dark:bg-amber-800/30 dark:text-amber-300'
-                    }`}
-                  >
-                    {poc.status === 'Live' ? 'Live' : 'Under Progress'}
-                  </span>
-                </div>
-
-                <p className="text-sm mb-4 text-accent-500 dark:text-accent-400">{poc.tagline}</p>
-
-                <p className="text-sm mb-5 flex-1 text-slate-600 dark:text-slate-300 leading-relaxed">
-                  {poc.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {poc.technologies.map((tech) => (
+              <RevealItem key={poc.title}>
+                <MotionCard className="h-full rounded-xl border border-slate-200 dark:border-ink-700 hover:border-accent-500/40 dark:hover:border-accent-400/40 hover:shadow-xl hover:shadow-slate-900/5 dark:hover:shadow-black/20 transition-[border-color,box-shadow] duration-300 p-6 flex flex-col">
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <h3 className="text-xl font-semibold">{poc.title}</h3>
                     <span
-                      key={tech}
-                      className="px-2 py-1 text-xs font-medium rounded-full border border-slate-200 dark:border-ink-700 text-slate-700 dark:text-slate-300"
+                      className={`px-2.5 py-1 text-xs font-medium rounded-full whitespace-nowrap ${
+                        poc.status === 'Live'
+                          ? 'bg-green-100 text-green-800 dark:bg-green-800/30 dark:text-green-300'
+                          : 'bg-amber-100 text-amber-800 dark:bg-amber-800/30 dark:text-amber-300'
+                      }`}
                     >
-                      {tech}
+                      {poc.status === 'Live' ? 'Live' : 'Under Progress'}
                     </span>
-                  ))}
-                </div>
+                  </div>
 
-                <a
-                  href={poc.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm font-medium text-accent-500 dark:text-accent-400 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 rounded self-start"
-                >
-                  Visit project
-                  <ArrowUpRight size={16} />
-                </a>
+                  <p className="text-sm mb-4 text-accent-500 dark:text-accent-400">{poc.tagline}</p>
+
+                  <p className="text-sm mb-5 flex-1 text-slate-600 dark:text-slate-300 leading-relaxed">
+                    {poc.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {poc.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-1 text-xs font-medium rounded-full border border-slate-200 dark:border-ink-700 text-slate-700 dark:text-slate-300 transition-colors duration-300 hover:border-accent-500/50 hover:text-accent-600 dark:hover:text-accent-300"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a
+                    href={poc.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-sm font-medium text-accent-500 dark:text-accent-400 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 rounded self-start"
+                  >
+                    Visit project
+                    <ArrowUpRight size={16} />
+                  </a>
+                </MotionCard>
               </RevealItem>
             ))}
           </div>

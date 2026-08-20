@@ -1,27 +1,24 @@
-import React, { createContext, useContext } from 'react';
-import { motion, useReducedMotion, Variants } from 'framer-motion';
+import React, { createContext, useContext, useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { duration, easeStandard, revealDistance, staggerContainer, staticVariants } from '../../lib/motion';
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
+const itemVariants = {
+  hidden: { opacity: 0, y: revealDistance.desktop },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5 },
+    transition: { duration: duration.base, ease: easeStandard },
   },
 };
 
-const staticVariants: Variants = {
-  hidden: { opacity: 1 },
-  visible: { opacity: 1 },
+const itemVariantsMobile = {
+  hidden: { opacity: 0, y: revealDistance.mobile },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: duration.base, ease: easeStandard },
+  },
 };
 
 export const RevealContext = createContext(false);
@@ -39,7 +36,7 @@ export const Reveal: React.FC<RevealProps> = ({ children, className }) => {
     <RevealContext.Provider value={inView}>
       <motion.div
         ref={ref}
-        variants={prefersReducedMotion ? staticVariants : containerVariants}
+        variants={prefersReducedMotion ? staticVariants : staggerContainer(0.08)}
         initial="hidden"
         animate={inView ? 'visible' : 'hidden'}
         className={className}
@@ -58,10 +55,15 @@ interface RevealItemProps {
 export const RevealItem: React.FC<RevealItemProps> = ({ children, className }) => {
   const inView = useContext(RevealContext);
   const prefersReducedMotion = useReducedMotion();
+  const [isMobile] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(max-width: 640px)').matches
+  );
 
   return (
     <motion.div
-      variants={prefersReducedMotion ? staticVariants : itemVariants}
+      variants={
+        prefersReducedMotion ? staticVariants : isMobile ? itemVariantsMobile : itemVariants
+      }
       animate={inView ? 'visible' : 'hidden'}
       className={className}
     >

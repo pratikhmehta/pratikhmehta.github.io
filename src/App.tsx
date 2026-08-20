@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PageIntro from './components/PageIntro';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -15,29 +16,41 @@ import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-function App() {
-  const [darkMode, setDarkMode] = useState(true);
+const getSystemPreference = () =>
+  typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  useEffect(() => {
+function App() {
+  const [darkMode, setDarkMode] = useState(() => {
     const savedMode = localStorage.getItem('darkMode');
-    if (savedMode) {
-      setDarkMode(savedMode === 'true');
-    } else {
-      setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
-    }
-  }, []);
+    return savedMode ? savedMode === 'true' : getSystemPreference();
+  });
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', darkMode);
-    localStorage.setItem('darkMode', String(darkMode));
   }, [darkMode]);
 
+  // Follow the OS theme live as long as the user hasn't manually overridden it.
+  useEffect(() => {
+    if (localStorage.getItem('darkMode')) return;
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e: MediaQueryListEvent) => setDarkMode(e.matches);
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
   const toggleDarkMode = () => {
-    setDarkMode((prev) => !prev);
+    setDarkMode((prev) => {
+      const next = !prev;
+      localStorage.setItem('darkMode', String(next));
+      return next;
+    });
   };
 
   return (
-    <div className="bg-paper-50 dark:bg-ink-950 min-h-screen transition-colors duration-300">
+    <div className="bg-paper-50 dark:bg-ink-950 min-h-screen transition-colors duration-500 ease-out">
+      <PageIntro />
       <a
         href="#hero"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-md focus:bg-accent-500 focus:text-white"

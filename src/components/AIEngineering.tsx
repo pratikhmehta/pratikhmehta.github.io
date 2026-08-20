@@ -32,7 +32,7 @@ const AIEngineering: React.FC = () => {
             {aiSkills.map((item) => (
               <span
                 key={item}
-                className="px-4 py-2 text-sm font-medium rounded-full border border-slate-200 dark:border-ink-700 text-slate-700 dark:text-slate-300"
+                className="px-4 py-2 text-sm font-medium rounded-full border border-slate-200 dark:border-ink-700 text-slate-700 dark:text-slate-300 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent-500/50 hover:text-accent-600 dark:hover:text-accent-300 hover:shadow-sm"
               >
                 {item}
               </span>

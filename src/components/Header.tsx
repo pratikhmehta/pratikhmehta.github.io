@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import { Link } from 'react-scroll';
+import { duration, easeStandard } from '../lib/motion';
 
 interface HeaderProps {
   toggleDarkMode: () => void;
@@ -10,6 +11,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ toggleDarkMode }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -36,17 +38,19 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-paper-50 dark:bg-ink-950 shadow-lg' : 'bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
+        scrolled
+          ? 'bg-paper-50/90 dark:bg-ink-950/90 backdrop-blur-md shadow-sm shadow-slate-900/5 dark:shadow-black/20'
+          : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <motion.div
             className="flex items-center"
-            initial={{ opacity: 0, x: -20 }}
+            initial={prefersReducedMotion ? false : { opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: duration.base, ease: easeStandard }}
           >
             <Link
               to="hero"
@@ -62,9 +66,9 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode }) => {
           {/* Desktop Nav */}
           <motion.nav
             className="hidden lg:flex space-x-5 xl:space-x-6"
-            initial={{ opacity: 0, y: -20 }}
+            initial={prefersReducedMotion ? false : { opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: duration.base, ease: easeStandard, delay: prefersReducedMotion ? 0 : 0.1 }}
           >
             {menuItems.map((item) => (
               <Link
@@ -91,13 +95,13 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode }) => {
 
           <div className="flex items-center">
             <motion.button
-              className="p-2 rounded-full text-slate-600 hover:bg-slate-200 dark:text-yellow-400 dark:hover:bg-ink-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500"
+              className="p-2 rounded-full text-slate-600 hover:bg-slate-200 dark:text-yellow-400 dark:hover:bg-ink-800 transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500"
               onClick={toggleDarkMode}
               aria-label="Toggle dark mode"
-              initial={{ opacity: 0, rotate: -90 }}
+              initial={prefersReducedMotion ? false : { opacity: 0, rotate: -90 }}
               animate={{ opacity: 1, rotate: 0 }}
-              transition={{ duration: 0.5 }}
-              whileTap={{ scale: 0.9 }}
+              transition={{ duration: duration.base, ease: easeStandard }}
+              whileTap={prefersReducedMotion ? undefined : { scale: 0.85, rotate: -15 }}
             >
               <Sun size={20} className="hidden dark:block" />
               <Moon size={20} className="block dark:hidden" />
@@ -111,9 +115,9 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode }) => {
               aria-label="Open menu"
               aria-hidden={isMenuOpen}
               tabIndex={isMenuOpen ? -1 : 0}
-              initial={{ opacity: 0 }}
+              initial={prefersReducedMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: duration.base, ease: easeStandard, delay: prefersReducedMotion ? 0 : 0.2 }}
             >
               <Menu size={24} />
             </motion.button>
@@ -129,7 +133,7 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode }) => {
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: duration.base, ease: easeStandard }}
           >
             <div className="flex justify-end p-4">
               <button
@@ -144,9 +148,9 @@ const Header: React.FC<HeaderProps> = ({ toggleDarkMode }) => {
               {menuItems.map((item, index) => (
                 <motion.div
                   key={item.name}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  transition={{ duration: duration.fast, ease: easeStandard, delay: prefersReducedMotion ? 0 : index * 0.06 }}
                 >
                   <Link
                     to={item.to}

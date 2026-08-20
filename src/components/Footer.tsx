@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { ArrowUp } from 'lucide-react';
+import { buttonHover } from '../lib/motion';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -26,9 +27,11 @@ const Footer: React.FC = () => {
               aria-label="Scroll to top"
             >
               <motion.div
-                className="p-3 rounded-full bg-slate-200 text-blue-600 hover:bg-slate-300 dark:bg-ink-800 dark:text-accent-400 dark:hover:bg-ink-700"
-                whileHover={{ y: -5 }}
-                whileTap={{ scale: 0.9 }}
+                className="p-3 rounded-full bg-slate-200 text-blue-600 hover:bg-slate-300 dark:bg-ink-800 dark:text-accent-400 dark:hover:bg-ink-700 transition-colors duration-300"
+                initial="rest"
+                whileHover="hover"
+                whileTap="tap"
+                variants={buttonHover}
               >
                 <ArrowUp size={20} />
               </motion.div>
