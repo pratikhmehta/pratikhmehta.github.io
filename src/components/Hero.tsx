@@ -14,8 +14,8 @@ const heroItem = {
 };
 
 const heroImage = {
-  hidden: { opacity: 0, scale: 0.92 },
-  visible: { opacity: 1, scale: 1, transition: { duration: duration.slow, ease: easeStandard } },
+  hidden: { opacity: 0, scale: 0.96 },
+  visible: { opacity: 1, scale: 1, transition: { duration: duration.fast, ease: easeStandard } },
 };
 
 const Hero: React.FC = () => {
@@ -104,6 +104,8 @@ const Hero: React.FC = () => {
 
           <motion.div
             className="md:w-1/2 mt-10 md:mt-0 flex justify-center"
+            initial="hidden"
+            animate="visible"
             variants={imageVariants}
           >
             <div className="relative">
@@ -124,6 +126,9 @@ const Hero: React.FC = () => {
                   alt="Pratik Mehta"
                   width={384}
                   height={384}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>
