@@ -267,14 +267,13 @@ export const contactInfo = {
   email: 'pratik.mehta2713@gmail.com',
   website: 'pratikhmehta.github.io',
   location: 'Pune, Maharashtra, India',
-  availability: 'Open to Remote / Relocation',
 };
 
 export const summary = [
   "Technical Lead with 10+ years of experience architecting enterprise eCommerce platforms across 15+ international projects, including Minii Hypermarket, NASM, T-Mobile, FJ Jewelry, Perfecta BE, and Amrutanjan.",
   'Adobe Commerce specialist delivering measurable performance gains through advanced system design, Redis/Varnish caching, and API engineering.',
   'Anthropic Claude Code 101 certified — actively shipping custom MCP servers, RAG pipelines, and agentic AI workflows in production.',
-  'Proven cross-functional leader in Agile, cross-timezone, multi-million-dollar engagements, seeking senior Technical Lead or eCommerce Architect roles in platform engineering or AI-augmented development.',
+  'Proven cross-functional leader in Agile, cross-timezone, multi-million-dollar engagements spanning platform engineering and AI-augmented development.',
 ];
 
 export const achievements = [

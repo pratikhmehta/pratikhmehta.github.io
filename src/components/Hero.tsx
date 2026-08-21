@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
               variants={itemVariants}
             >
               Architecting enterprise eCommerce platforms and shipping agentic AI workflows in production.
-              Based in Pune, India — open to remote and relocation.
+              Based in Pune, India.
             </motion.p>
 
             <motion.div className="flex flex-col sm:flex-row gap-4 mb-12" variants={itemVariants}>

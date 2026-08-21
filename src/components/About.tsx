@@ -63,10 +63,6 @@ const About: React.FC = () => {
                       {contactInfo.website}
                     </a>
                   </div>
-                  <div className="flex items-start">
-                    <span className="font-semibold mr-2 text-slate-700 dark:text-slate-300">Availability:</span>
-                    <span className="text-slate-700 dark:text-slate-300">{contactInfo.availability}</span>
-                  </div>
                 </div>
               </div>
             </div>

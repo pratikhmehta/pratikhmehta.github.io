@@ -81,10 +81,10 @@ const Contact: React.FC = () => {
             <p className="text-sm font-semibold tracking-widest uppercase text-accent-500 dark:text-accent-400 mb-3">
               Get in Touch
             </p>
-            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Let&rsquo;s Build Something Great</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold mb-4">Let&rsquo;s Connect</h2>
             <p className="text-slate-600 dark:text-slate-400 max-w-xl mx-auto">
-              Open to senior Technical Lead and Adobe Commerce Architect roles in platform engineering
-              or AI-augmented development — recruiters and hiring teams, reach out directly.
+              Always glad to connect with fellow engineers, architects, and builders working on
+              eCommerce platforms or AI-augmented development.
             </p>
           </RevealItem>
 
@@ -123,7 +123,6 @@ const Contact: React.FC = () => {
                   <div>
                     <h4 className="text-lg font-semibold">Location</h4>
                     <span className="text-slate-700 dark:text-slate-300">{contactInfo.location}</span>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">{contactInfo.availability}</p>
                   </div>
                 </div>
 
